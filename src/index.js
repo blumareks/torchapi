@@ -28,18 +28,21 @@ app.use(cors());
 // defining an endpoint to return all ads
 app.get('/', (req, res) => {
     console.log("responded on");
-    res.send(ads_on);
+    return res.status(200).json(ads_on);
+//    res.send(ads_on);
   
 });
 
 app.get('/off', (req, res) => {
     console.log("responded off");
-    res.send(ads_off);
+    return res.status(200).json(ads_off);
+    //res.send(ads_off);
 });
 
 app.get('/events', (req, res) => {
   console.log("responded off");
-  res.send(eventArray);
+  return res.status(200).json(eventArray);
+  //res.send(eventArray);
 });
 
 app.listen(PORT,HOST, () => {
